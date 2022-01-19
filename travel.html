@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="travel.css">
+    <script defer src="travel.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-light " style="font-size: 30px; font-family: sans-serif; background-color: rgb(219, 231, 199);">
+
+        <img src="data:image/jpeg;base64,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" width="150" height="55"
+            class="d-inline-block align-top" alt="">
+        <mark style="font-family: monospace; color:black; background-color: rgb(219, 231, 199);">RAT AND MAZE PROJECT</mark>
+
+    </nav>
+    <br>
+
+
+    <div id="movements">
+        &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <div class="intro1" style="height: 40px; width: 40px; box-sizing: border-box; background-color: yellow ; border: rgb(78, 165, 180) 2px solid ; float: left; " >
+        </div>&nbsp;&nbsp;
+        <strong style="
+        padding: 10px; font-size: 17px; font-family: monospace;">Movement is <mark style="color: green;"> Allowed </mark>   in this cell         </strong>
+
+    <div class="intro2" style="height: 40px; width: 40px; box-sizing: border-box; background-color: #808080 ; border: rgb(78, 165, 180) 2px solid ; float: right; "></div>&nbsp;&nbsp;;
+    <strong style="
+    padding: 10px; font-size: 17px; font-family: monospace;  ">Movement is <mark style="color: red;">Not Allowed</mark>  in this cell         </strong>
+
+
+    </div>
+    <br><br>
+
+
+    <div id="container">
+
+
+
+        <div class="lsb tsb" id="0">
+
+        </div>
+
+        <div class="tsb ldb" id="1">
+
+        </div>
+
+        <div class="tsb ldb" id="2">
+
+        </div>
+
+        <div class="tsb lsb" id="3">
+
+        </div>
+        <div class="tsb ldb" id="4">
+
+        </div>
+
+        <div class="tsb ldb" id="5">
+
+        </div>
+        <div class="tsb lsb" id="6">
+
+        </div>
+
+        <div class="tsb ldb" id="7">
+
+        </div>
+        <div class="tsb rsb ldb" id="8">
+
+        </div>
+
+        <div class="lsb tdb" id="9">
+
+        </div>
+
+        <div class="ldb tdb" id="10">
+
+        </div>
+
+        <div class="ldb tdb" id="11">
+
+        </div>
+
+        <div class="lsb tdb" id="12">
+
+        </div>
+        <div class="ldb tdb" id="13">
+
+        </div>
+
+        <div class="ldb tdb" id="14">
+
+        </div>
+        <div class="lsb tdb" id="15">
+
+        </div>
+
+        <div class="ldb tdb" id="16">
+
+        </div>
+        <div class="rsb ldb tdb" id="17">
+
+        </div>
+
+        <div class="lsb bsb tdb" id="18">
+
+        </div>
+
+        <div class="bsb ldb tdb" id="19">
+
+        </div>
+
+        <div class="bsb ldb tdb" id="20">
+
+        </div>
+
+        <div class="bsb lsb tdb" id="21">
+
+        </div>
+        <div class="bsb ldb tdb" id="22">
+
+        </div>
+
+        <div class="bsb ldb tdb" id="23">
+
+        </div>
+        <div class="bsb lsb tdb" id="24">
+
+        </div>
+
+        <div class="bsb ldb tdb" id="25">
+
+        </div>
+        <div class="bsb rsb ldb tdb" id="26">
+
+        </div>
+
+        <div class="lsb" id="27">
+
+        </div>
+
+        <div class="ldb" id="28">
+
+        </div>
+
+        <div class="ldb" id="29">
+
+        </div>
+
+        <div class="lsb" id="30">
+
+        </div>
+        <div class="ldb" id="31">
+
+        </div>
+
+        <div class="ldb" id="32">
+
+        </div>
+        <div class="lsb" id="33">
+
+        </div>
+
+        <div class="ldb" id="34">
+
+        </div>
+        <div class="rsb ldb" id="35">
+
+        </div>
+
+        <div class="lsb tdb" id="36">
+
+        </div>
+
+        <div class="ldb tdb" id="37">
+
+        </div>
+
+        <div class="ldb tdb" id="38">
+        </div>
+
+        <div class="lsb tdb" id="39">
+
+        </div>
+        <div class="ldb tdb" id="40">
+
+        </div>
+
+        <div class="ldb tdb" id="41">
+
+        </div>
+        <div class="lsb tdb" id="42">
+
+        </div>
+
+        <div class="ldb tdb" id="43">
+
+        </div>
+        <div class="rsb ldb tdb" id="44">
+
+        </div>
+
+        <div class="lsb bsb tdb" id="45">
+
+        </div>
+
+        <div class="bsb ldb tdb" id="46">
+
+        </div>
+
+        <div class="bsb ldb tdb" id="47">
+
+        </div>
+
+        <div class="bsb lsb tdb" id="48">
+
+        </div>
+        <div class="bsb ldb tdb" id="49">
+
+        </div>
+
+        <div class="bsb ldb tdb" id="50">
+
+        </div>
+        <div class="bsb lsb tdb" id="51">
+
+        </div>
+
+        <div class="bsb ldb tdb" id="52">
+
+        </div>
+        <div class="bsb rsb ldb tdb" id="53">
+
+        </div>
+
+        <div class="lsb" id="54">
+
+        </div>
+
+        <div class="ldb" id="55">
+
+        </div>
+
+        <div class="ldb" id="56">
+
+        </div>
+
+        <div class="lsb" id="57">
+
+        </div>
+        <div class="ldb" id="58">
+
+        </div class="ldb">
+
+        <div class="ldb" id="59">
+
+        </div>
+        <div class="lsb" id="60">
+
+        </div>
+
+        <div class="ldb" id="61">
+
+        </div>
+        <div class="rsb ldb" id="62">
+
+        </div>
+
+        <div class="lsb tdb" id="63">
+
+        </div>
+
+        <div class="ldb tdb" id="64">
+
+        </div>
+
+        <div class="ldb tdb" id="65">
+
+        </div>
+
+        <div class="lsb tdb" id="66">
+
+        </div>
+        <div class="ldb tdb" id="67">
+
+        </div>
+
+        <div class="ldb tdb" id="68">
+
+        </div>
+        <div class="lsb tdb" id="69">
+
+        </div>
+
+        <div class="ldb tdb" id="70">
+
+        </div>
+        <div class="rsb ldb tdb" id="71">
+
+        </div>
+
+        <div class="lsb bsb tdb" id="72">
+
+        </div>
+
+        <div class="bsb ldb tdb" id="73">
+
+        </div>
+
+        <div class="bsb ldb tdb" id="74">
+
+        </div>
+
+        <div class="bsb lsb tdb" id="75">
+
+        </div>
+        <div class="bsb ldb tdb" id="76">
+
+        </div>
+
+        <div class="bsb tdb ldb" id="77">
+
+        </div>
+        <div class="bsb lsb tdb" id="78">
+
+        </div>
+
+        <div class="bsb ldb tdb" id="79">
+
+        </div>
+        <div class="bsb rsb ldb tdb" id="80">
+
+        </div>
+
+
+    </div>
+    <br>
+    <div id="buttons" >
+        <button type="button" class="btn btn-danger" id="generate-sudoku" >Get New
+            Puzzle</button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="button" class="btn btn-success" id="solve">Solve</button>
+    </div>
+    <br><br>
+
+    <div id = "result" style="font-size: 30px; font-family: sans-serif; background-color: rgb(119, 196, 219); text-align: center;">
+        <b>Answer Displays Here</b>
+       </div>
+</body>
+
+</html>
